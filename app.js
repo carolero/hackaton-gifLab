@@ -31,6 +31,15 @@ $(document).ready(function () {
 
 let indexOfGif = -1;
 
+//chamando o Hammer.js
+const myElement = document.getElementById('card-image');
+const mc = new Hammer(myElement);
+
+// listen to events...
+mc.on("swipeleft", getSearch);
+
+mc.on("swiperight", likedGif);
+
 function getSearch(event) {
   let searchItem = buscaPalavra();
   if (!searchItem) {
@@ -75,7 +84,6 @@ function showGif(data) {
   }
 
 function addToFav() {
-
   return database.ref("favorites/" + userID).push({
     url: urlImg,
     title: gifTitle

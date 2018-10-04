@@ -29,3 +29,12 @@ h4 {
 img {
   max-height: 45vh;
 }
+
+.my-d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-text-center {
+  text-align: center;
+}
