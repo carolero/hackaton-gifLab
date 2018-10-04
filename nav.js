@@ -6,7 +6,7 @@ const btnBusca = document.getElementById("btn-busca");
 btnBusca.addEventListener("click", trazBusca);
 
 function buscaPalavra(){
-  return document.getElementById("campo-busca").value;
+  return document.getElementById("search").value;
 }
 
 function erro(){
