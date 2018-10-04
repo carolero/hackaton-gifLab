@@ -30,14 +30,11 @@ $(document).ready(function() {
           </div>
         </div>
       </div>
-    `)};
-
-
-    // $(`button[data-delete-id=${key}]`).click(function() {
-    //   $(this).parent().remove();
-    //   database.ref('posts/'+ USER_ID + "/" + key).remove();
-    // }); >>>>> ISSO AQUI DELETA
-
-
+    `);
+    $(`button[data-delete-id=${key}]`).click(function() {
+      $(this).closest('.row').remove().fadeOut('slow');
+      database.ref('favorites/'+ USER_ID + "/" + key).remove();
+    });
+  }
 
 });
