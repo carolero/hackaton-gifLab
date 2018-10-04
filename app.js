@@ -2,6 +2,12 @@ var database = firebase.database();
 var userID = window.location.search.match(/\?userId=(.*)/);
 
 $(document).ready(function () {
+  getGifsFromAPI();
+  getGifsFromAPI();
+  $('#red-btn').click(getGifsFromAPI);
+  $('#green-btn').click(likedGif);
+ 
+
   database.ref("users/" + userID).once("value")
     .then(function (snapshot) {
       var userInfo = snapshot.val();
@@ -16,10 +22,13 @@ $(document).ready(function () {
       });
     })
 
+  function addGifToDB(text) {
+    return database.ref("favorites/" + userID).push({
+      text: text,
+      time: time
+    });
+  }
 
-  getGifsFromAPI();
-  $('#red-btn').click(getGifsFromAPI);
-  $('#green-btn').click(likedGif);
 });
 
 let indexOfGif = -1;
@@ -44,7 +53,7 @@ function showGif(data) {
   $('img').attr('src', urlImg);
   gifTitle = data['data'][indexOfGif]['title'];
   $('#gif-title').html(gifTitle);
-}
+  }
 
 function addToFav() {
   console.log('gostei, mas não tem função de addToFav ainda')
