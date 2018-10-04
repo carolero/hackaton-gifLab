@@ -1,5 +1,5 @@
 var database = firebase.database();
-var userID = window.location.search.match(/\?userId=(.*)/);
+var userID = window.location.search.match(/\?id=(.*)/);
 
 $(document).ready(function () {
 
@@ -22,8 +22,11 @@ $(document).ready(function () {
   $('input').keyup(getSearch);
 
   getGifsFromAPI();
-  
-  $('a').click(getSearch);
+
+  $('#red-btn').click(getSearch);
+
+  $('#green-btn').click(likedGif);
+
 });
 
 let indexOfGif = -1;
@@ -49,11 +52,15 @@ function buscaPalavra(){
   return document.getElementById("search").value;
 }
 
+function likedGif() {
+  getSearch();
+  addToFav()
+}
 
 function getGifsFromAPI() {
   $.ajax({
     type: 'GET',
-    url: `https://api.giphy.com/v1/gifs/search?q=gif&api_key=${keyAPI}&limit=100`,
+    url: `https://api.giphy.com/v1/gifs/search?q=gif&api_key=rc0vl8oEetDnA6wEuyjXXwtGB99EYxSS&limit=100 `,
     success: showGif,
     error: erro
   });
@@ -65,6 +72,15 @@ function showGif(data) {
   $('img').attr('src', urlImg);
   gifTitle = data['data'][indexOfGif]['title'];
   $('#gif-title').html(gifTitle);
+  }
+
+function addToFav() {
+
+  return database.ref("favorites/" + userID).push({
+    url: urlImg,
+    title: gifTitle
+
+  });
 }
 
 function erro() {
