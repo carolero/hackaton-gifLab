@@ -1,5 +1,5 @@
 var database = firebase.database();
-var userID = window.location.search.match(/\?id=(.*)/);
+var userID = window.location.search.match(/\?id=(.*)/)[1];
 
 $(document).ready(function () {
 
@@ -26,19 +26,11 @@ $(document).ready(function () {
   $('#red-btn').click(getSearch);
 
   $('#green-btn').click(likedGif);
+  $('#favorite').click(() => window.location = "favoritos.html?id=" + userID);
 
 });
 
 let indexOfGif = -1;
-
-//chamando o Hammer.js
-const myElement = document.getElementById('card-image');
-const mc = new Hammer(myElement);
-
-// listen to events...
-mc.on("swipeleft", getSearch);
-
-mc.on("swiperight", likedGif);
 
 function getSearch(event) {
   let searchItem = buscaPalavra();
@@ -84,6 +76,7 @@ function showGif(data) {
   }
 
 function addToFav() {
+
   return database.ref("favorites/" + userID).push({
     url: urlImg,
     title: gifTitle
@@ -94,3 +87,4 @@ function addToFav() {
 function erro() {
   console.log('erro');
 }
+
