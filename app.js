@@ -18,15 +18,21 @@ $(document).ready(function () {
 
 
   getGifsFromAPI();
-  $('a').click(getGifsFromAPI);
+  $('#red-btn').click(getGifsFromAPI);
+  $('#green-btn').click(likedGif);
 });
 
 let indexOfGif = -1;
 
+function likedGif(){
+  getGifsFromAPI();
+  addToFav()
+}
+
 function getGifsFromAPI() {
   $.ajax({
     type: 'GET',
-    url: `https://api.giphy.com/v1/gifs/search?q=gif&api_key=5SM5CM1SwJrKJ9nhP6AfjeKquA2aZdqW&limit=100`,
+    url: `https://api.giphy.com/v1/gifs/search?q=gif&api_key=rc0vl8oEetDnA6wEuyjXXwtGB99EYxSS&limit=100`,
     success: showGif,
     error: erro
   });
@@ -38,6 +44,10 @@ function showGif(data) {
   $('img').attr('src', urlImg);
   gifTitle = data['data'][indexOfGif]['title'];
   $('#gif-title').html(gifTitle);
+}
+
+function addToFav() {
+  console.log('gostei, mas não tem função de addToFav ainda')
 }
 
 function erro() {
