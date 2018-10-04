@@ -75,7 +75,6 @@ function showGif(data) {
   }
 
 function addToFav() {
-
   return database.ref("favorites/" + userID).push({
     url: urlImg,
     title: gifTitle
