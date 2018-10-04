@@ -1,4 +1,6 @@
-$(document).ready(function() {
+var database = firebase.database();
+
+$(document).ready(function () {
   $(".sign-up-button").click(signUpClick);
   $(".sign-in-button").click(signInClick);
 });
@@ -12,8 +14,15 @@ function signUpClick(event) {
 
 function createUser(email, password) {
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(function(response) {
-     alert("Cadastro concluido com sucesso !!!\n " + email)
+    .then(function (response) {
+      var userId = response.user.uid;
+      database.ref("users/" + userId).set({
+        email: email
+        
+      });
+      alert("Cadastro concluido com sucesso !!!\n " + email);
+      window.location = "main.html?id=" + userId;
+      
     })
     .catch(function(error) {
       handleError(error);
@@ -44,5 +53,5 @@ function handleError(error) {
 }
 
 function redirectToTasks(userId) {
-  window.location = "app.html?id=" + userId;
+  window.location = "main.html?id=" + userId;
 }
