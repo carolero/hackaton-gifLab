@@ -13,20 +13,31 @@ $(document).ready(function() {
 
     function createFavorite(url, title, key) {
     $(".favorite-list").append(`
-        <li>
-        <div class="row txt-post">
-            <img src="${url}">
-            <p>${title}</p>
+      <div class="row">
+          <div class="col s12 m6">
+            <div class="card">
+              <div id="card-image" class="card-image">
+                <img src="${url}">
+              </div>
+              <div class="card-content my-text-center">
+                <p id="gif-title">${title}</p>
+                <br>
+                <div class="my-d-flex">
+                  <button class="waves-light btn" data-delete-id="${key}" >Deletar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <button data-delete-id="${key}" >Deletar</button>
-        </li>
-    `);
-      
+      </div>
+    `)};
+
+
     // $(`button[data-delete-id=${key}]`).click(function() {
     //   $(this).parent().remove();
     //   database.ref('posts/'+ USER_ID + "/" + key).remove();
     // }); >>>>> ISSO AQUI DELETA
-      
-    };
+
+
 
 });
