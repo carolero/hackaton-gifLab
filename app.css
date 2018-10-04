@@ -10,6 +10,7 @@
 #menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #my-nav {
@@ -17,5 +18,5 @@
 }
 
 img {
-  max-height: 60vh;
+  max-height: 45vh;
 }
