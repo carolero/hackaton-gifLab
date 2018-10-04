@@ -17,6 +17,15 @@
   margin-bottom: 20px;
 }
 
+h4 {
+  font-family: 'Acme', serif;
+  font-size: 5rem;
+}
+
+.btn-entrar, .btn-cads {
+  margin: 10px;
+  font-size: 15px;
+}
 img {
   max-height: 45vh;
 }
