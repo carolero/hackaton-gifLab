@@ -1,0 +1,21 @@
+#my-body {
+  margin: 10px;
+}
+
+#div-menu {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+#my-nav {
+  margin-bottom: 20px;
+}
+
+img {
+  max-height: 60vh;
+}
