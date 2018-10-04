@@ -21,8 +21,8 @@ function showGif(data) {
   indexOfGif += 1;
   urlImg = data['data'][indexOfGif]['images']['original']['url'];
   $('img').attr('src', urlImg);
-  // gifTitle = data['data'][indexOfGif]['title'];
-  // $('.gif-title').html(gifTitle);
+  gifTitle = data['data'][indexOfGif]['title'];
+  $('#gif-title').html(gifTitle);
 }
 
 function erro() {
