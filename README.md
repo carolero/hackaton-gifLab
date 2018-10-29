@@ -11,6 +11,11 @@ Esse é um desafio de desenvolvimeto mobile com o objetivo de criar um "Tinder p
 
 Esse projeto foi premiado em sua categoria no hackaton.
 
+### O app
+
+![screenshot](https://raw.githubusercontent.com/carolfortunato/hackaton-gifLab/master/LabGif_screenshot-mobile.png)
+
+Acesse o app [aqui](https://labgifs.firebaseapp.com/)
 
 ### Desenvolvido para
 [Laboratoria](https://www.laboratoria.la/br)
