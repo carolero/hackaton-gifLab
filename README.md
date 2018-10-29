@@ -2,7 +2,7 @@ Gif Lab - hackaton
 ==============
 
 Esse projeto foi desenvolvido no hackaton de 12h parte da grade curricular da Laboratoria. 
-Esse é um desafio de desenvolvimeto mobile com o objetivo de criar um "Tinder para Gifs" que utiliza a API de gifs, o Hammer.js e o Firebase.
+Esse é um desafio de desenvolvimento mobile com o objetivo de criar um "Tinder para Gifs" que utiliza a API de gifs, o Hammer.js e o Firebase.
 
 
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
