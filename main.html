@@ -14,24 +14,25 @@
   <script src="firebase-config.js"></script>
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>          
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body id="my-body">
   <div id="div-menu">
     <header id="menu">
       <h4>Lab Gif</h4>
       <div>
-        <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">person</i></a>
-        <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">favorite</i></a>
+        <a href="index.html" class="btn-floating btn-small waves-effect waves-light teal lighten-2"><i class="material-icons">person</i></a>
+        <a id="favorite" class="btn-floating btn-small waves-effect waves-light teal lighten-2"><i class="material-icons">favorite</i></a>
       </div>
     </header>
     <nav id="my-nav">
       <div class="nav-wrapper">
         <form>
-          <div class="input-field">
+          <div class="input-field teal lighten-2">
             <input id="search" type="search" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
@@ -41,18 +42,19 @@
     </nav>
   </div>
   <main>
-    
     <div class="row">
         <div class="col s12 m6">
           <div class="card">
             <div id="card-image" class="card-image">
               <img src="">
             </div>
-            <div class="card-content">
+            <div class="card-content my-text-center">
               <p id="gif-title"></p>
               <br>
-              <a id="red-btn" class="btn halfway-fab waves-effect waves-light red"><i class="material-icons">clear</i></a>
-              <a id="green-btn" class="btn halfway-fab waves-effect waves-light green"><i class="material-icons">check</i></a>
+              <div class="my-d-flex">
+                <a id="red-btn" class="btn halfway-fab waves-effect waves-light red"><i class="material-icons">clear</i></a>
+                <a id="green-btn" class="btn halfway-fab waves-effect waves-light green"><i class="material-icons">check</i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -61,6 +63,6 @@
   </main>
   <script src="key.js"></script>
   <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-  <script src="app.js"></script> 
+  <script src="app.js"></script>
 </body>
 </html>
