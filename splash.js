@@ -4,7 +4,5 @@
   $('.splash-content').delay('5000').fadeOut('slow');
   $('.splash').delay('6000').fadeOut('slow');
 
-  getTasksFromDB();
-  $(".btnSumPoints").click(addTasksClick);
 });
 */
